@@ -1,6 +1,6 @@
 /* =========================================================
-   COLMEIA-COMPONENT-LOADER.JS
-   Sistema de Integração Programática
+   BOOKOS-COMPONENT-LOADER.JS
+   Governança Editorial Operacional
 ========================================================= */
 
 class ComponentLoader {
