@@ -67,7 +67,7 @@ async function initGibiFlip(containerId, pdfPath) {
             padding:40px;
             text-align:center;
         ">
-            Carregando Gibi...
+            Carregando Livro...
         </div>
     `;
 
@@ -356,10 +356,76 @@ async function initGibiFlip(containerId, pdfPath) {
 
         container.innerHTML = `
             <div class="component-error">
-                Erro ao carregar o Gibi.
+                Erro ao carregar o Livro.
             </div>
         `;
 
     }
+
+}
+
+
+/* ==========================================
+   AUTO START — LIVRO 1
+========================================== */
+
+const gibiTabObserver =
+    new MutationObserver(() => {
+
+        const container =
+            document.getElementById("flipbook1");
+
+        if (!container) {
+            return;
+        }
+
+        if (
+            container.dataset.loaded === "true" ||
+            container.dataset.loaded === "loading"
+        ) {
+            return;
+        }
+
+        initGibiFlip(
+            "flipbook1",
+            "assets/bd/cadapasso_livro1.pdf"
+        );
+
+    });
+
+
+/* ==========================================
+   OBSERVAR SOMENTE O TAB-CONTAINER
+========================================== */
+
+const tabContainer =
+    document.getElementById("tab-container");
+
+
+if (tabContainer) {
+
+    gibiTabObserver.observe(
+        tabContainer,
+        {
+            childList: true,
+            subtree: true
+        }
+    );
+
+}
+
+
+/* ==========================================
+   CASO O CONTAINER JÁ EXISTA
+========================================== */
+
+if (
+    document.getElementById("flipbook1")
+) {
+
+    initGibiFlip(
+        "flipbook1",
+        "assets/bd/cadapasso_livro1.pdf"
+    );
 
 }
