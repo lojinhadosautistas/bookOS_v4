@@ -53,43 +53,43 @@
 
     <div class="chapter-tabs" id="orientacoes-tabs">
 
-        <button
-            class="chapter-btn active"
-            data-section="como-revisar">
-            01 • Como revisar
-        </button>
+    <button
+        class="chapter-btn active"
+        data-target="como-revisar">
+        01 • Como revisar
+    </button>
 
-        <button
-            class="chapter-btn"
-            data-section="dimensoes">
-            02 • Dimensões
-        </button>
+    <button
+        class="chapter-btn"
+        data-target="dimensoes">
+        02 • Dimensões
+    </button>
 
-        <button
-            class="chapter-btn"
-            data-section="capitulos">
-            03 • 9 capítulos
-        </button>
+    <button
+        class="chapter-btn"
+        data-target="capitulos">
+        03 • 9 capítulos
+    </button>
 
-        <button
-            class="chapter-btn"
-            data-section="transversal">
-            04 • Revisão transversal
-        </button>
+    <button
+        class="chapter-btn"
+        data-target="transversal">
+        04 • Revisão transversal
+    </button>
 
-        <button
-            class="chapter-btn"
-            data-section="perguntas">
-            05 • Perguntas finais
-        </button>
+    <button
+        class="chapter-btn"
+        data-target="perguntas">
+        05 • Perguntas finais
+    </button>
 
-        <button
-            class="chapter-btn"
-            data-section="central">
-            06 • Pergunta central
-        </button>
+    <button
+        class="chapter-btn"
+        data-target="central">
+        06 • Pergunta central
+    </button>
 
-    </div>
+</div>
 
 
     <!-- =====================================================
@@ -1826,7 +1826,7 @@
 (function () {
 
     /* =====================================================
-       SUBABAS PRINCIPAIS
+       SUBABAS PRINCIPAIS — ORIENTAÇÕES
     ====================================================== */
 
     const mainTabs =
@@ -1845,14 +1845,24 @@
         tab.addEventListener("click", function () {
 
             const target =
-                this.dataset.section;
+                this.dataset.target;
+
+
+            /* Remove estado ativo dos botões */
 
             mainTabs.forEach(btn => {
+
                 btn.classList.remove("active");
+
             });
+
+
+            /* Ativa botão selecionado */
 
             this.classList.add("active");
 
+
+            /* Esconde todos os conteúdos */
 
             mainSections.forEach(section => {
 
@@ -1861,8 +1871,11 @@
             });
 
 
+            /* Abre o conteúdo correspondente */
+
             const selected =
                 document.getElementById(target);
+
 
             if (selected) {
 
@@ -1897,11 +1910,13 @@
             const target =
                 this.dataset.chapter;
 
+
             chapterTabs.forEach(btn => {
 
                 btn.classList.remove("active");
 
             });
+
 
             this.classList.add("active");
 
@@ -1915,6 +1930,7 @@
 
             const selected =
                 document.getElementById(target);
+
 
             if (selected) {
 
