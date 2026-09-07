@@ -223,7 +223,7 @@ function initTabs() {
             tab.classList.add("active");
 
             const tabName =
-                tab.dataset.tab;
+                tab.dataset.target;
 
             loadTab(tabName);
 
