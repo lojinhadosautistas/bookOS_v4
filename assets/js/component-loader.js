@@ -210,7 +210,7 @@ async function loadTab(tabName) {
 function initTabs() {
 
     const tabs =
-        document.querySelectorAll(".menu-tab");
+        document.querySelectorAll(".tab");
 
     tabs.forEach(tab => {
 
