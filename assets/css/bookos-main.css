@@ -239,6 +239,16 @@ min-width:0;
 
 }
 
+#tab-container {
+    width: 100%;
+    min-width: 0;
+}
+
+#tab-container > * {
+    width: 100%;
+    min-width: 0;
+}
+
 .left h3,
 .right h3{
 
