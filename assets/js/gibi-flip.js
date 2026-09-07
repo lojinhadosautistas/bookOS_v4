@@ -1,6 +1,6 @@
 /* ==========================================
    GIBI-FLIP.JS
-   Syncann Editorial OS
+   BookOS - Governança Editorial Operacional
 ========================================== */
 
 async function initGibiFlip(containerId, pdfPath) {
